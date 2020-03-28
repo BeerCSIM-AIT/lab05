@@ -1,14 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Amazing Thailand
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  <ion-card *ngFor="let tour of tours">
+    <img [src]="tour.image" alt="" (click)="goToPlaceDetail(tour.id)">
+    <ion-card-content>
+      <ion-card-title>{{tour.name}}</ion-card-title>
+      <p>{{tour.detail}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
